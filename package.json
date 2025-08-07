@@ -4,7 +4,8 @@
   "type": "module",
   "private": true,
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/pg": "^8.15.5"
   },
   "scripts": {
     "db:generate": "drizzle-kit generate:sqlite",
@@ -16,7 +17,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "build": "bun run --compile src/index.ts",
-     "dev": "bun run --watch src/index.ts",
+    "dev": "bun run --watch src/index.ts",
     "build:watch": "bun run --compile --watch src/index.ts"
   },
   "peerDependencies": {

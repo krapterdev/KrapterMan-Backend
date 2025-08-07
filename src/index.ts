@@ -1,11 +1,14 @@
 // src/index.ts
 
 import { Hono } from 'hono'
+import app from './app';
 
 const app = new Hono()
 
-app.get('/', (c) => {
-  return c.text('Hello from Bun + Hono!')
-})
+Bun.serve({
+  fetch: app.fetch,
+  port: 3000,
+});
 
 export default app
+

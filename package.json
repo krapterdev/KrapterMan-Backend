@@ -6,6 +6,19 @@
   "devDependencies": {
     "@types/bun": "latest"
   },
+  "scripts": {
+    "db:generate": "drizzle-kit generate:sqlite",
+    "db:push": "drizzle-kit push:sqlite",
+    "db:studio": "drizzle-kit studio:sqlite",
+    "start": "bun run index.ts",
+    "test": "bun test",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "build": "bun run --compile index.ts",
+     "dev": "bun run --watch index.ts",
+    "build:watch": "bun run --compile --watch index.ts"
+  },
   "peerDependencies": {
     "typescript": "^5"
   },

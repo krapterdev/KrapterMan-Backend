@@ -1,12 +1,19 @@
-import { Hono } from 'hono'
-import * as userController from '../controllers/user.controller'
+// src/routes/user.routes.ts
+import { Router } from 'express';
+import {
+  getUsers,
+  getUser,
+  postUser,
+  putUser,
+  removeUser,
+} from '../controllers/user.controller';
 
-const userRouter = new Hono()
+const router = Router();
 
-userRouter.get('/', userController.getAllUsers)
-userRouter.get('/:id', userController.getUserById)
-userRouter.post('/', userController.createUser)
-userRouter.put('/:id', userController.updateUser)
-userRouter.delete('/:id', userController.deleteUser)
+router.get('/', getUsers);
+router.get('/:id', getUser);
+router.post('/', postUser);
+router.put('/:id', putUser);
+router.delete('/:id', removeUser);
 
-export default userRouter
+export default router;

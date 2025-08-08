@@ -1,9 +1,8 @@
-import app from './app'
-const port = process.env.PORT ? Number(process.env.PORT) : 4000;
+// src/index.ts
+import app from './app';
 
-Bun.serve({
-  port,
-  fetch: app.fetch,
+const PORT = 2226;
+
+app.listen(PORT, () => {
+  console.log(`🚀 Server is running at http://localhost:${PORT}`);
 });
-
-console.log(`🚀 Server running at http://localhost:${port}`);

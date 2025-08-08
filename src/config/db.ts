@@ -1,11 +1,12 @@
-import { Pool } from 'pg'
-import dotenv from 'dotenv'
+// src/config/db.ts
+import { Pool } from 'pg';
+import { config } from 'dotenv';
 
-dotenv.config()
+config(); // Load .env
 
-const pool = new Pool({
+export const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: { rejectUnauthorized: false },
-})
-
-export default pool
+  ssl: {
+    rejectUnauthorized: false, // Neon requires SSL
+  },
+});

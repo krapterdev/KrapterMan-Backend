@@ -1,8 +1,12 @@
 import { Hono } from 'hono'
-import { getAllUsers } from '../controllers/user.controller'
+import * as userController from '../controllers/user.controller'
 
-const router = new Hono()
+const userRouter = new Hono()
 
-router.get('/', getAllUsers)
+userRouter.get('/', userController.getAllUsers)
+userRouter.get('/:id', userController.getUserById)
+userRouter.post('/', userController.createUser)
+userRouter.put('/:id', userController.updateUser)
+userRouter.delete('/:id', userController.deleteUser)
 
-export default router
+export default userRouter

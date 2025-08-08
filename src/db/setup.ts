@@ -1,4 +1,4 @@
-import pool from '../config/db';
+import pool from "../config/db";
 
 const setup = async () => {
   try {
@@ -16,9 +16,10 @@ const setup = async () => {
       VALUES
         ('Sahil Kumar', 'sahil@example.com'),
         ('Amit Sharma', 'amit@example.com'),
-        ('Priya Singh', 'sdsds'),
-        ('riya Singh', 'sds')
-      ON CONFLICT (email) DO NOTHING;
+        ('Himanshu', 'Himanshu@gmail.com'),
+        ('Himanshu1', 'Himanshu1@gmail.com'),
+        ('Sahil Kumar', 'sahilssk@gmail.com')
+       ON CONFLICT (email) DO NOTHING;
     `);
 
     console.log("✅ Table created and data inserted.");
